@@ -1,0 +1,39 @@
+Program: Sudoku solver<p>
+Author: Wojciech Martusewicz<p>
+Start of development: 2013-03-13<p>
+Significant improvements: 2020-10-29<p>
+
+Basic run:
+
+	resu <file=sudoku>
+
+By default, the puzzle is saved in the "sudoku" file.<p>
+If another puzzle is to be solved, the filename must be given as a parameter.<p>
+
+Comments can be used in the puzzle file (the line must start with the '#' sign).<p>
+On the line, characters other than numbers are omitted.<p>
+
+Advanced run:<p>
+
+	resu <file=sudoku> <recursion_level=0> <full_find=0>
+
+For difficult sudoku, you can use recursive search by specifying the recursion depth level (eg 1,2,3 ..).<p>
+We can also set up a full search. In the case of ambiguous sudoku that have more than one solution, we can try to find them.<p>
+
+Example "sudoku" file:<p>
+0 0 0  2 6 5  0 0 0<p>
+0 8 0  0 0 0  0 9 0<p>
+0 6 0  0 0 0  0 7 0<p>
+
+7 0 0  0 4 0  0 0 3<p>
+8 0 0  7 0 3  0 0 4<p>
+9 0 0  0 8 0  0 0 7<p>
+
+0 4 0  0 0 0  0 6 0<p>
+0 7 0  0 0 0  0 5 0<p>
+0 0 0  1 9 7  0 0 0<p>
+
+By running this command (execution time about 20 minutes):<p>
+	resu sudoku 3 1
+We can find 41 different, correct solutions (the generated "results" file needs to be sorted and get rid of duplicate solutions).<p>
+
